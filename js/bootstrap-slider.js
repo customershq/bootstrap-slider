@@ -693,7 +693,15 @@
 				enabled: true,
 				formatter: function(val) {
 					if (Array.isArray(val)) {
-						return val[0] + " : " + val[1];
+						var left_str = val[0] + " day";
+						if (val[0] != 1) {
+							left_str = left_str + "s"
+						}
+						var right_str = val[1] + " day";
+						if (val[1] != 1) {
+							right_str = right_str + "s"
+						}
+						return left_str + " / " + right_str;
 					} else {
 						return val;
 					}
